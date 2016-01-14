@@ -39,6 +39,16 @@ public class LonelyTwitterActivity extends Activity {
 			public void onClick(View v) {
 				setResult(RESULT_OK);
 				String text = bodyText.getText().toString();
+
+				NormalTweet newestTweet = new NormalTweet(text);
+
+				try {
+					newestTweet.setMessage("");
+				} catch (TweetTooLongException e) {
+					// TODO: handle exception
+					System.err.println("Tweets must be no larger than 140 characters in length");
+				}
+
 				saveInFile(text, new Date(System.currentTimeMillis()));
 				finish();
 
