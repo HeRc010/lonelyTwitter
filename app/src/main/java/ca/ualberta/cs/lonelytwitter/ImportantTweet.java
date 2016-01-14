@@ -16,9 +16,12 @@ public class ImportantTweet extends Tweet implements Tweetable {
         return "IMPORTANT!" + this.message;
     }
 
-    // TODO: // FIXME: 1/14/16 
     public Date getDate() {
-        return new Date();
+        return this.date;
+    }
+
+    public ArrayList<Mood> getMoods() {
+        return this.moods;
     }
 
     public boolean isImportant() {

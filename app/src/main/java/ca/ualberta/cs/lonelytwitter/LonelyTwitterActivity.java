@@ -42,6 +42,10 @@ public class LonelyTwitterActivity extends Activity {
 
 				NormalTweet newestTweet = new NormalTweet(text);
 
+				// TODO: remove; test
+				newestTweet.addMood(new Happy());
+				newestTweet.addMood(new Sad());
+
 				try {
 					newestTweet.setMessage("");
 				} catch (TweetTooLongException e) {

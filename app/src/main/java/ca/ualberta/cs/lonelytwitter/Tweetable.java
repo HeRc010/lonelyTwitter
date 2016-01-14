@@ -9,4 +9,5 @@ import java.util.*;
 public interface Tweetable {
     public String getMessage();
     public Date getDate();
+    public ArrayList<Mood> getMoods();
 }
