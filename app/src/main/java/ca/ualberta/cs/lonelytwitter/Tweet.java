@@ -41,4 +41,9 @@ public abstract class Tweet {
     }
 
     abstract boolean isImportant();
+
+    @Override
+    public String toString() {
+        return date.toString() + " | " + message;
+    }
 }
