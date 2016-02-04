@@ -6,7 +6,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 /**
- * Created by adlawren on 1/28/16.
+ * The class the tests associated with the TweetList class.
+ * <p>Unit tests are used to test each method of the TweetList class.</p><br>
+ * @see TweetList
+ * @author adlawren
+ * @version 2.1
  */
 public class TweetListTest extends ActivityInstrumentationTestCase2 {
     public TweetListTest() {

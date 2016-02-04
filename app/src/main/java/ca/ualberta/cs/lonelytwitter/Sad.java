@@ -1,9 +1,12 @@
 package ca.ualberta.cs.lonelytwitter;
 
 /**
- * Created by adlawren on 1/14/16.
+ * The class associated with the Mood Sad.
+ * <p>Overrides the format method in order to return a sad face </p><br>
+ * @see Mood
+ * @author adlawren
+ * @version 2.1
  */
-
 import java.util.*;
 
 public class Sad extends Mood {

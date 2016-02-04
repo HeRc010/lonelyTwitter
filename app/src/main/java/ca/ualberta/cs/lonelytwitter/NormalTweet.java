@@ -1,9 +1,13 @@
 package ca.ualberta.cs.lonelytwitter;
 
 /**
- * Created by adlawren on 1/14/16.
+ * The class associated with a list of tweets.
+ * <p>It contains a list of tweets.</p><br>
+ * @see Tweet
+ * @see Mood
+ * @author adlawren
+ * @version 2.1
  */
-
 import java.util.*;
 
 public class NormalTweet extends Tweet implements Tweetable {

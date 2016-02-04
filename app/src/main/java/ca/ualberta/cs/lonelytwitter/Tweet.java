@@ -3,7 +3,13 @@ package ca.ualberta.cs.lonelytwitter;
 import java.util.*;
 
 /**
- * Created by adlawren on 1/14/16.
+ * The class associated with a Tweet.
+ * <p>It contains the date, message and moods associated with a given Tweet.</p><br>
+ * @see Mood
+ * @see NormalTweet
+ * @see ImportantTweet
+ * @author adlawren
+ * @version 2.1
  */
 public abstract class Tweet {
     protected String message = null;

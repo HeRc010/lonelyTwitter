@@ -6,7 +6,11 @@ import java.util.Comparator;
 import java.util.IllegalFormatCodePointException;
 
 /**
- * Created by adlawren on 1/28/16.
+ * The class associated with a list of tweets.
+ * <p>It contains a list of tweets.</p><br>
+ * @see NormalTweet
+ * @author adlawren
+ * @version 2.1
  */
 public class TweetList {
     private ArrayList<Tweet> tweets = new ArrayList<Tweet>();

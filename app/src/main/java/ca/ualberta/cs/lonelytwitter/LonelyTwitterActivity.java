@@ -14,6 +14,7 @@ import java.util.Date;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -24,14 +25,97 @@ import android.widget.ListView;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+/**
+ * The main activity for a small Twitter app to capture,<br> notes and comments.
+ * <p>It saves the input tweets in the form of json files.</p><br>
+ * 		A sample code is: <br>
+ * 			<code>
+ * 			 	for (int i = 0; i &lt; 10; ++i) {
+ * 			 	  for (int j = 0; j &lt; i; ++j) {
+ * 			 	      doSomething();
+ * 			 	  }
+ * 			 	}
+ * 			</code> <br>
+ * The list of important activities in this class are as follows: <br>
+ * 		<ul>
+ * 		 	<li>item 1</li>
+ * 		 	<li>item 2</li>
+ * 		 	<li>item 3</li>
+ * 		 	<li>item 4</li>
+ * 		</ul>
+ * @see NormalTweet
+ * @see java.awt
+ * @author adlawren
+ * @version 2.1
+ */
 public class LonelyTwitterActivity extends Activity {
 
+	static int MAXIMUM_TWEET_SIZE = 100;
 	private static final String FILENAME = "file.sav";
 	private EditText bodyText;
 	private ListView oldTweetsList;
 
+	/**
+	 * @see Tweet
+	 */
 	private ArrayList<Tweet> tweets = new ArrayList<Tweet>();
 	private ArrayAdapter<Tweet> adapter;
+
+	private int calculateTweetSize() {
+		return -1;
+	}
+
+	public String removeStopWords(String text) {
+		return "";
+	}
+
+	/**
+	 * Applies some function on the input values.
+	 * @param text1 The text for the directory
+	 * @param text2 The filename
+	 * @param text3 The extension
+	 * @param text4
+	 * @return The concatenation of ...
+	 * @exception IllegalArgumentException
+	 * This happens if ...
+	 */
+	public String doSomething(String text1, String text2, String text3, String text4) {
+		return "";
+	}
+
+	private void startSecondActivity(Intent intent) {
+
+	}
+
+	protected boolean evaluateOtherActivity(Intent intent) {
+		String expression1 = "",
+			   expression2 = "",
+			   expression3 = "",
+			   expression4 = "";
+
+		String expression = doSomething(expression1, expression2,
+				doSomething(expression3, expression4, expression3,
+						expression4), expression1);
+
+		int count = 10;
+		for (int i = 0; i < count; ++i) {
+			try {
+				int a = 1;
+				int b = 2;
+				int count2 = 0;
+
+				if (a < b) {
+					doSomething("", "", "", "");
+				} else if (true) {
+					doSomething("a", "", "", "");
+				}
+			} catch (Exception e) {
+
+			}
+		}
+
+		return true;
+	}
 
 	/** Called when the activity is first created. */
 	@Override
