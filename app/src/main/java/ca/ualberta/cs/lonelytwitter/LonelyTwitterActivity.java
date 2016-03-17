@@ -1,6 +1,7 @@
 package ca.ualberta.cs.lonelytwitter;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
@@ -14,6 +15,7 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.concurrent.ExecutionException;
 
 public class LonelyTwitterActivity extends Activity {
@@ -64,7 +66,7 @@ public class LonelyTwitterActivity extends Activity {
                 String text = bodyText.getText().toString();
                 NormalTweet latestTweet = new NormalTweet(text);
 
-                tweets.add(latestTweet);
+                tweets.add(0, latestTweet);
 
                 latestTweet.addThumbnail(thumbnail);
 
@@ -94,6 +96,7 @@ public class LonelyTwitterActivity extends Activity {
         try {
             tweets = new ArrayList<Tweet>();
             tweets.addAll(getTweetsTask.get());
+
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
