@@ -67,6 +67,10 @@ public class ElasticsearchTweetController {
                 e.printStackTrace();
             }
 
+            for (NormalTweet tweet : tweets) {
+                System.out.println("Next tweet id: " + tweet.getId());
+            }
+
             return tweets;
         }
     }
@@ -96,10 +100,36 @@ public class ElasticsearchTweetController {
         }
     }
 
+    public static class AddTestTask extends AsyncTask<Test,Void,Void> {
+
+        @Override
+        protected Void doInBackground(Test... params) {
+            verifyConfig();
+
+            for(Test tweet : params) {
+                Index index = new Index.Builder(tweet).index("papaya").type("test").build();
+
+                try {
+                    DocumentResult execute = client.execute(index);
+                    if(execute.isSucceeded()) {
+                        tweet.setId(execute.getId());
+                    } else {
+                        Log.e("TODO", "Our insert of test failed, oh no!");
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            return null;
+        }
+    }
+
     // If no client, add one
     public static void verifyConfig() {
         if(client == null) {
-            DroidClientConfig.Builder builder = new DroidClientConfig.Builder("http://krasmuss-cmput301.rhcloud.com");
+            // DroidClientConfig.Builder builder = new DroidClientConfig.Builder("http://krasmuss-cmput301.rhcloud.com");
+            DroidClientConfig.Builder builder = new DroidClientConfig.Builder("http://adlawren-papayatest.rhcloud.com/");
             DroidClientConfig config = builder.build();
 
             JestClientFactory factory = new JestClientFactory();

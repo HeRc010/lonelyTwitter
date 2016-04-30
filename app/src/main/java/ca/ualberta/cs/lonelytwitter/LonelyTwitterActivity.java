@@ -76,11 +76,18 @@ public class LonelyTwitterActivity extends Activity {
                 ElasticsearchTweetController.AddTweetTask addTweetTask = new ElasticsearchTweetController.AddTweetTask();
                 addTweetTask.execute(latestTweet);
 
+                // Add a test to Elasticsearch
+                Test test = new Test();
+                test.setContent("Added from app");
+
+                ElasticsearchTweetController.AddTestTask addTestTask = new ElasticsearchTweetController.AddTestTask();
+                addTestTask.execute(test);
+
                 bodyText.setText("");
                 pictureButton.setImageResource(android.R.color.transparent);
                 thumbnail = null;
 
-                setResult(RESULT_OK);
+                // setResult(RESULT_OK);
             }
         });
     }
